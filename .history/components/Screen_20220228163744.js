@@ -1,17 +1,17 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { FontAwesome5 } from '@expo/vector-icons'
 
 function Screen() {
     return (
         <View>
-            {/* <TouchableOpacity>
+            <View>
                 <FontAwesome5
                     name='arrow-left'
                     size={20}
                     style={styles.arrowLeftIcon}
                 />
-            </TouchableOpacity> */}
+            </View>
             <View>
                 <Text style={styles.text}>Đăng ký</Text>
                 <Text style={styles.paragraph}>

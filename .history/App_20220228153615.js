@@ -2,9 +2,8 @@ import { useFonts } from 'expo-font'
 import { StyleSheet, View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import ScreenNameInput from './screens/ScreenNameInput'
+import NameInput from './screens/NameInput'
 import Second from './screens/Second'
-import ScreenWait from './screens/ScreenWait'
 
 const Stack = createNativeStackNavigator()
 
@@ -25,11 +24,8 @@ export default function App() {
                 initialRouteName='ScreenWait'
                 screenOptions={{ headerShown: false }}
             >
-                <Stack.Screen name='ScreenWait' component={ScreenWait} />
-                <Stack.Screen
-                    name='ScreenNameInput'
-                    component={ScreenNameInput}
-                />
+                <Stack.Screen name='ScreenWait' component={}/>
+                <Stack.Screen name='NameInput' component={NameInput} />
                 <Stack.Screen name='Second' component={Second} />
             </Stack.Navigator>
         </NavigationContainer>

@@ -6,16 +6,15 @@ import {
     TextInput,
     Button,
     TouchableOpacity,
-    Alert,
 } from 'react-native'
 import Screen from '../components/Screen'
 import MainButton from '../components/MainButton'
 import { Formik } from 'formik'
 import { SignupSchema } from '../validation'
 
-const NavigateToDetails = (props) => {
-    props.navigation.navigate('Second')
-}
+// const NavigateToDetails = (props) => {
+//     props.navigation.navigate('Second')
+// }
 function NameInput(props) {
     const handleSubmit = () => {
         console.log('Submit')
@@ -26,13 +25,11 @@ function NameInput(props) {
             <Formik
                 initialValues={{ firstName: '', lastName: '' }}
                 validationSchema={SignupSchema}
-                // onSubmit={(values) => console.log(values)}
                 onSubmit={handleSubmit}
             >
                 {({
                     handleChange,
                     handleBlur,
-                    // handleSubmit,
                     values,
                     errors,
                     touched,
@@ -78,7 +75,7 @@ function NameInput(props) {
                             <Button
                                 title='Tiếp theo'
                                 sytle={styles.button}
-                                // onPress={handleSubmit}
+                                onPress={() => navigation.navigate('Second')}
                                 disabled={!dirty || !isValid}
                                 type='submit'
                             />

@@ -5,13 +5,13 @@ import { FontAwesome5 } from '@expo/vector-icons'
 function Screen() {
     return (
         <View>
-            {/* <TouchableOpacity>
+            <TouchableOpacity onPress={onPress}>
                 <FontAwesome5
                     name='arrow-left'
                     size={20}
                     style={styles.arrowLeftIcon}
                 />
-            </TouchableOpacity> */}
+            </TouchableOpacity>
             <View>
                 <Text style={styles.text}>Đăng ký</Text>
                 <Text style={styles.paragraph}>
