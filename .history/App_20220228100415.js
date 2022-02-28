@@ -19,11 +19,8 @@ export default function App() {
     }
 
     return (
-        <NavigationContainer>
-            <Stack.Navigator
-                initialRouteName='NameInput'
-                screenOptions={{ headerShown: false }}
-            >
+        <NavigationContainer screenOptions={{ headerShown: false }}>
+            <Stack.Navigator initialRouteName='NameInput'>
                 <Stack.Screen name='NameInput' component={NameInput} />
                 <Stack.Screen name='Second' component={Second} />
             </Stack.Navigator>

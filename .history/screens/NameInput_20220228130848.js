@@ -39,8 +39,6 @@ function NameInput(props) {
         } else if (!/^[a-zA-Z ']{1,25}$/.test(value)) {
             error = 'Vui lòng nhập đúng định dạng'
         }
-
-        return error
     }
     return (
         <View style={styles.container}>
@@ -70,7 +68,6 @@ function NameInput(props) {
                                 onBlur={handleBlur('firstName')}
                                 value={values.firstName}
                                 // maxLength={25}
-                                validate={validateFirstName}
                             />
                             {errors.firstName && touched.firstName ? (
                                 <Text style={styles.message}>

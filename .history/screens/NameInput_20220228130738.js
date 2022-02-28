@@ -35,12 +35,8 @@ function NameInput(props) {
     const validateFirstName = (value) => {
         let error
         if (!value) {
-            error = 'Vui lòng nhập Họ và tên đệm'
-        } else if (!/^[a-zA-Z ']{1,25}$/.test(value)) {
-            error = 'Vui lòng nhập đúng định dạng'
+            error = ''
         }
-
-        return error
     }
     return (
         <View style={styles.container}>
@@ -70,7 +66,6 @@ function NameInput(props) {
                                 onBlur={handleBlur('firstName')}
                                 value={values.firstName}
                                 // maxLength={25}
-                                validate={validateFirstName}
                             />
                             {errors.firstName && touched.firstName ? (
                                 <Text style={styles.message}>

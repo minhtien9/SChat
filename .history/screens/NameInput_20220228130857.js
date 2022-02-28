@@ -70,7 +70,6 @@ function NameInput(props) {
                                 onBlur={handleBlur('firstName')}
                                 value={values.firstName}
                                 // maxLength={25}
-                                validate={validateFirstName}
                             />
                             {errors.firstName && touched.firstName ? (
                                 <Text style={styles.message}>

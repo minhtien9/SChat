@@ -28,20 +28,10 @@ function NameInput(props) {
     //     setBtnDisabled(!bool)
     // })
 
-    // const submitForm = () => {
-    //     console.log(enteredFirstName, enteredLastName)
-    // }
-
-    const validateFirstName = (value) => {
-        let error
-        if (!value) {
-            error = 'Vui lòng nhập Họ và tên đệm'
-        } else if (!/^[a-zA-Z ']{1,25}$/.test(value)) {
-            error = 'Vui lòng nhập đúng định dạng'
-        }
-
-        return error
+    const submitForm = () => {
+        console.log(enteredFirstName, enteredLastName)
     }
+
     return (
         <View style={styles.container}>
             <Screen />
@@ -69,13 +59,10 @@ function NameInput(props) {
                                 onChangeText={handleChange('firstName')}
                                 onBlur={handleBlur('firstName')}
                                 value={values.firstName}
-                                // maxLength={25}
-                                validate={validateFirstName}
+                                maxLength={25}
                             />
                             {errors.firstName && touched.firstName ? (
-                                <Text style={styles.message}>
-                                    {errors.firstName}
-                                </Text>
+                                <Text>{errors.firstName}</Text>
                             ) : null}
 
                             {/* <Text style={styles.message}>{message}</Text> */}
@@ -90,12 +77,10 @@ function NameInput(props) {
                                 onChangeText={handleChange('lastName')}
                                 onBlur={handleBlur('lastName')}
                                 value={values.lastName}
-                                // maxLength={25}
+                                maxLength={25}
                             />
                             {errors.lastName && touched.lastName ? (
-                                <Text style={styles.message}>
-                                    {errors.lastName}
-                                </Text>
+                                <Text style={styles.message}>{errors.lastName}</Text>
                             ) : null}
                             {/* <Text style={styles.message}>{message}</Text> */}
                         </View>
