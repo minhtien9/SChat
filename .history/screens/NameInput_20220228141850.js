@@ -17,9 +17,33 @@ const NavigateToDetails = (props) => {
     props.navigation.navigate('Second')
 }
 function NameInput(props) {
-    const handleSubmit = () => {
-        console.log('Submit')
-    }
+    // const [enteredFirstName, setEnteredFirstName] = useState('')
+    // const [enteredLastName, setEnteredLastName] = useState('')
+    // const [btnDisabled, setBtnDisabled] = useState(true)
+    // const [message, setMessage] = useState('')
+
+    // useEffect(() => {
+    //     let bool = /^[a-zA-Z ']{1,25}$/.test(enteredFirstName, enteredLastName)
+    //     setMessage(null)
+    //     setBtnDisabled(!bool)
+    // })
+
+    // const submitForm = () => {
+    //     console.log(enteredFirstName, enteredLastName)
+    // }
+
+    // const validateFirstName = (value) => {
+    //     let error
+    //     if (!value) {
+    //         error = 'Vui lòng nhập Họ và tên đệm'
+    //     } else if (!/^[a-zA-Z ']{1,25}$/.test(value)) {
+    //         error = 'Vui lòng nhập đúng định dạng'
+    //     }
+
+    //     return error
+    // }
+
+    const App: React.FC=()
     return (
         <View style={styles.container}>
             <Screen />
@@ -45,16 +69,21 @@ function NameInput(props) {
 
                             <TextInput
                                 style={styles.firstNameInput}
+                                // autoFocus={true}
                                 placeholder='Nhập họ và tên đệm của bạn'
                                 onChangeText={handleChange('firstName')}
                                 onBlur={handleBlur('firstName')}
                                 value={values.firstName}
+                                // maxLength={25}
+                                // validate={validateFirstName}
                             />
                             {errors.firstName && touched.firstName ? (
                                 <Text style={styles.message}>
                                     {errors.firstName}
                                 </Text>
                             ) : null}
+
+                            {/* <Text style={styles.message}>{message}</Text> */}
                         </View>
 
                         <View>
@@ -66,21 +95,23 @@ function NameInput(props) {
                                 onChangeText={handleChange('lastName')}
                                 onBlur={handleBlur('lastName')}
                                 value={values.lastName}
+                                // maxLength={25}
                             />
                             {errors.lastName && touched.lastName ? (
                                 <Text style={styles.message}>
                                     {errors.lastName}
                                 </Text>
                             ) : null}
+                            {/* <Text style={styles.message}>{message}</Text> */}
                         </View>
 
                         <View style={styles.buttonContainer}>
                             <Button
                                 title='Tiếp theo'
                                 sytle={styles.button}
+                                // onPress={() => NavigateToDetails(props)}
                                 // onPress={handleSubmit}
-                                disabled={!dirty || !isValid}
-                                type='submit'
+                                disabled={!dirty || isValid}
                             />
                         </View>
                     </View>

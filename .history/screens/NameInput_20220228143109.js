@@ -26,8 +26,7 @@ function NameInput(props) {
             <Formik
                 initialValues={{ firstName: '', lastName: '' }}
                 validationSchema={SignupSchema}
-                // onSubmit={(values) => console.log(values)}
-                onSubmit={handleSubmit}
+                onSubmit={(values) => console.log(values)}
             >
                 {({
                     handleChange,

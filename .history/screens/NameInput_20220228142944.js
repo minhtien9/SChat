@@ -17,22 +17,18 @@ const NavigateToDetails = (props) => {
     props.navigation.navigate('Second')
 }
 function NameInput(props) {
-    const handleSubmit = () => {
-        console.log('Submit')
-    }
     return (
         <View style={styles.container}>
             <Screen />
             <Formik
                 initialValues={{ firstName: '', lastName: '' }}
                 validationSchema={SignupSchema}
-                // onSubmit={(values) => console.log(values)}
-                onSubmit={handleSubmit}
+                onSubmit={(values) => console.log(values)}
             >
                 {({
                     handleChange,
                     handleBlur,
-                    // handleSubmit,
+                    handleSubmit,
                     values,
                     errors,
                     touched,
@@ -78,9 +74,7 @@ function NameInput(props) {
                             <Button
                                 title='Tiếp theo'
                                 sytle={styles.button}
-                                // onPress={handleSubmit}
-                                disabled={!dirty || !isValid}
-                                type='submit'
+                                onPress={handleSubmit}
                             />
                         </View>
                     </View>

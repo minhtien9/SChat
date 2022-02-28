@@ -17,22 +17,44 @@ const NavigateToDetails = (props) => {
     props.navigation.navigate('Second')
 }
 function NameInput(props) {
-    const handleSubmit = () => {
-        console.log('Submit')
-    }
+    // const [enteredFirstName, setEnteredFirstName] = useState('')
+    // const [enteredLastName, setEnteredLastName] = useState('')
+    // const [btnDisabled, setBtnDisabled] = useState(true)
+    // const [message, setMessage] = useState('')
+
+    // useEffect(() => {
+    //     let bool = /^[a-zA-Z ']{1,25}$/.test(enteredFirstName, enteredLastName)
+    //     setMessage(null)
+    //     setBtnDisabled(!bool)
+    // })
+
+    // const submitForm = () => {
+    //     console.log(enteredFirstName, enteredLastName)
+    // }
+
+    // const validateFirstName = (value) => {
+    //     let error
+    //     if (!value) {
+    //         error = 'Vui lòng nhập Họ và tên đệm'
+    //     } else if (!/^[a-zA-Z ']{1,25}$/.test(value)) {
+    //         error = 'Vui lòng nhập đúng định dạng'
+    //     }
+
+    //     return error
+    // }
+
     return (
         <View style={styles.container}>
             <Screen />
             <Formik
                 initialValues={{ firstName: '', lastName: '' }}
                 validationSchema={SignupSchema}
-                // onSubmit={(values) => console.log(values)}
-                onSubmit={handleSubmit}
+                onSubmit={(values) => console.log(values)}
             >
                 {({
                     handleChange,
                     handleBlur,
-                    // handleSubmit,
+                    handleSubmit,
                     values,
                     errors,
                     touched,
@@ -78,9 +100,7 @@ function NameInput(props) {
                             <Button
                                 title='Tiếp theo'
                                 sytle={styles.button}
-                                // onPress={handleSubmit}
-                                disabled={!dirty || !isValid}
-                                type='submit'
+                                onPress={handleSubmit}
                             />
                         </View>
                     </View>

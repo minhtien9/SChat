@@ -17,17 +17,13 @@ const NavigateToDetails = (props) => {
     props.navigation.navigate('Second')
 }
 function NameInput(props) {
-    const handleSubmit = () => {
-        console.log('Submit')
-    }
     return (
         <View style={styles.container}>
             <Screen />
             <Formik
                 initialValues={{ firstName: '', lastName: '' }}
                 validationSchema={SignupSchema}
-                // onSubmit={(values) => console.log(values)}
-                onSubmit={handleSubmit}
+                onSubmit={(values) => console.log(values)}
             >
                 {({
                     handleChange,
