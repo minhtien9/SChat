@@ -1,7 +1,6 @@
 import { useFonts } from 'expo-font'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-
 import SignupNameScreen from './screens/Signup/SignupNameScreen'
 import WaittingScreen from './screens/WaittingScreen'
 import SignupPhoneScreen from './screens/Signup/SignupPhoneScreen'
@@ -10,7 +9,7 @@ import SigninScreen from './screens/Signin/SigninScreen'
 import SigninScreenComponent from './components/SigninScreenComponent'
 import SignupScreenComponent from './components/SignupScreenComponent'
 import AuthenticationScreenComponent from './components/AuthenticationScreenComponent'
-import InputOTPScreenComponent from './components/InputOTPScreenComponent'
+import InputOTPScreen from './components/InputOTPScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -62,8 +61,8 @@ export default function App() {
                 />
 
                 <Stack.Screen
-                    name='InputOTPScreenComponent'
-                    component={InputOTPScreenComponent}
+                    name='InputOTPScreen'
+                    component={InputOTPScreen}
                 />
             </Stack.Navigator>
         </NavigationContainer>
